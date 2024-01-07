@@ -1,0 +1,64 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#message-container {
+    display: inline-block;
+    height: 80vh;
+    width: 97%;
+    border: 1px solid #000;
+    margin: 10px;
+}
+
+#form {
+    margin: 0 10px;
+}
+
+input {
+    width: 85%;
+    margin-bottom: 10px;
+}
+
+label[for="room-input"] {
+    padding-right: 17px;
+}
+
+button {
+    width: calc(3% + 20px);
+}
+
+div {
+    position: relative;
+    height: 1em;
+    width: 97%;
+    font-size: 1.5em;
+    font-weight: 400;
+    background-color: beige;
+    padding: 5px 10px;
+    margin-top: 5px;
+}
+
+#host-button, 
+#toHome {
+    height: 50px;
+    width: 200px;
+    /* background: url(); */
+    background-color: #E6FFFF;
+    border-radius: 50px;
+    margin: 50px 50px;
+    font-size: large;
+    font-weight: 700;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    -webkit-box-shadow: 0px 10px 14px 0px rgba(173,173,173,0.76); 
+    box-shadow: 0px 10px 14px 0px rgba(173,173,173,0.76);
+    border: 4px none #1C6EA4;
+}
+
+#host-button:hover,
+#toHome:hover {
+    background-color: #B3F2FF;
+
+    transform: translateY(-10px);
+}

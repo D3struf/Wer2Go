@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wer2Go</title>
+
+    <script src="../waiting-room/waiting-room-script.js" type="module"></script>
+</head>
+<body>
+    <main>
+        <div id="invite-container">
+            <h1>Invite Others to Join</h1>
+            <div id="game-code-container">
+                <h2 id="website-url">
+                    Website: http://localhost:8080
+                </h2>
+                <h2 id="game-code"></h2>
+            </div>
+
+            <div id="start-game-container">
+                <!-- This will be updated dynamically based on the situation -->
+            </div>
+        </div>
+
+        <section id="message-container"></section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Check if gameCode is stored in local storage
+            const gameCode = localStorage.getItem('gameCode')
+            console.log(gameCode)
+        
+            if (gameCode) {
+                // Update the h2 element with the stored game code
+                const h2 = document.getElementById("game-code");
+                h2.innerHTML = 'Game Code: ' + gameCode;
+        
+                // Clear the stored game code to avoid using it again
+                // localStorage.removeItem('gameCode');
+            }
+        });
+    </script>
+</body>
+</html>

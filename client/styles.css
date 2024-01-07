@@ -1,0 +1,401 @@
+/* @font-face {
+    font-family: 'Pixellet Th';
+    src: url(./Fonts/Pixelette\ Regular.ttf);
+} */
+
+body {
+    margin: 0;
+}
+
+.container{
+    background-image: url("./images/dtbg.png");
+    min-height: 100vh;
+    background-attachment: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100vh;
+    width: 100%;
+}
+
+header {
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    height: 80px;
+    width: 100%;
+    z-index: 2;
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.23);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    text-shadow: 0 0 10px rgba(255, 60, 12, 0.8); 
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo-container {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+}
+
+.logo-container img {
+    width: auto; /* Set the width of your logo */
+    height: 100%; /* Maintain aspect ratio */
+}
+
+header nav {
+    margin-right: 60px;
+}
+
+header ul {
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+    align-items: center;
+    float: right;
+}
+
+header li {
+    list-style: none;
+    text-align: center;
+    text-wrap: nowrap;
+    color: #ffffff;
+    width: 40px;
+}
+
+header li:hover {
+    border-bottom: 3px solid;
+    border-color: #9200D8;
+    border-color: -moz-linear-gradient(left, #9200D8 0%, #1F67EA 100%);
+    border-color: -webkit-linear-gradient(left, #9200D8 0%, #1F67EA 100%);
+    border-color: linear-gradient(to right, #9200D8 0%, #1F67EA 100%);
+}
+
+header li:nth-child(4) {
+    padding-bottom: 10px;
+}
+
+header li img {
+    width: 48px;
+    height: 48px;
+}
+
+header li a {
+    color: #ffffff; 
+    text-decoration: none;
+}
+
+.white {
+    color: #ffffff;
+    font-size: 27rem;
+    position: absolute;
+    top: 7%;
+    left: 95%;
+    margin: 0;
+    padding: 0;
+}
+
+.go {   
+    position: absolute;
+    top: 65%;
+    left: 135%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Styling the dropdown */
+.dropdown {
+    position: relative;
+}
+
+.dropbtn {
+    display: block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: linear-gradient(to right, #160118, #9601A3); /* Gradient background color */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    width: 250px; /* Adjust the width of the dropdown */
+    height: 350px; /* Adjust the height for a taller box */
+    padding: 10px; /* Adjust the padding inside the dropdown */
+    border-radius: 10px; /* Add border radius for rounded corners */
+    left: 50%; /* Center the dropdown horizontally */
+    transform: translateX(-80%); /* Adjust for centered positioning */
+    top: 90px; /* Adjust the top margin to move it down */
+}
+
+.dropdown-content img {
+    width: 130px; /* Adjust the width of the profile image */
+    height: 130px; /* Adjust the height of the profile image */
+    border-radius: 50%;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.buttonUser {
+    position: absolute;
+    top: 67%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 80px;
+    border: 1px solid #fff; /* Set the border color to white */
+    border-radius: 20px;
+    background: linear-gradient(45deg, #8A548A, #62076A); 
+    font-size: 14px;
+    color: white; /* Set the text color */
+    cursor: pointer;
+    transition: color 0.3s ease; /* Smooth transition on hover */
+
+    /* Optional: Add box-shadow for a more pronounced effect */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    white-space: nowrap; 
+}
+
+.buttonUser2 {
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 95px;
+    border: 1px solid #fff; /* Set the border color to white */
+    border-radius: 20px;
+    background: linear-gradient(45deg, #930475, #BD16C7);
+    font-size: 14px;
+    color: white; /* Set the text color */
+    cursor: pointer;
+    transition: color 0.3s ease; /* Smooth transition on hover */
+
+    /* Optional: Add box-shadow for a more pronounced effect */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    white-space: nowrap; 
+}
+
+
+
+.container-home{
+    background-image: url("./images/homebg.png");
+    min-height: 100vh;
+    background-attachment: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container-home img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100vh;
+    width: 100%;
+}
+
+#host-button {
+    position: absolute;
+    top: 80%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    padding: 20px 40px;
+    border: 1px solid #fff; /* Set the border color to white */
+    border-radius: 30px;
+    background: transparent;
+    font-size: 26px;
+    color: purple; /* Set the text color */
+    cursor: pointer;
+    transition: color 0.3s ease; /* Smooth transition on hover */
+
+    /* Optional: Add box-shadow for a more pronounced effect */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#host-button:hover {
+    color: #fff; /* Change text color on hover */
+    background: linear-gradient(45deg, #122C60, #633A75); /* Add gradient background on hover */
+}
+
+#room-button {
+    position: absolute;
+    top: 80%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    padding: 20px 40px;
+    border: 1px solid #fff; /* Set the border color to white */
+    border-radius: 30px;
+    background: transparent;
+    font-size: 26px;
+    color: purple; /* Set the text color */
+    cursor: pointer;
+    transition: color 0.3s ease; /* Smooth transition on hover */
+
+    /* Optional: Add box-shadow for a more pronounced effect */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#room-button:hover {
+    color: #fff; /* Change text color on hover */
+    background: linear-gradient(45deg, #122C60, #633A75); /* Add gradient background on hover */
+}
+
+.container-about{
+    background-image: url("./images/aboutbg.png");
+    min-height: 100vh;
+    background-attachment: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container-about img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100vh;
+    width: 100%;
+}
+
+.container-deletion{
+    background-image: url("./images/deletionbg.png");
+    min-height: 100vh;
+    background-attachment: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container-deletion img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100vh;
+    width: 100%;
+}
+
+.container-signin{
+    background-image: url("./images/signinbg.png");
+    min-height: 100vh;
+    background-attachment: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container-signin img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100vh;
+    width: 100%;
+}
+
+#userpic {
+    width: 150px; /* Set the desired width */
+    height: auto; /* Maintain the aspect ratio */
+    max-width: 100%; /* Ensure the image does not exceed the container width */
+    max-height: 100%; /* Ensure the image does not exceed the container height */
+    display: block; /* Remove extra space below the image */
+    margin: 0 auto; /* Center the image horizontally in its container */
+    position: absolute; /* Change to absolute positioning */
+    top: 22%; /* Adjust the top property as needed */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.container-signin p {
+    font-weight: bold;
+    color: #24FF00;
+    position: absolute;
+    bottom: 520px; /* Adjust the bottom position */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 38px;
+    line-height: 1.5;
+}
+
+.container-signin h2 {
+    font-weight: bold;
+    color: white;
+    position: absolute;
+    bottom: 180px; /* Adjust the bottom position */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 32px;
+    line-height: 1.5;
+}
+
+.dotted-box{
+    width: 400px; /* Set the width of the textbox */
+    height: 30px; /* Adjust the height as needed */
+    padding: 10px; /* Add padding for better visual appearance */
+    background-color: transparent;
+    border: 1px dotted rgba(153, 153, 153, 0.5);
+    outline: none; /* Remove the default focus outline */
+    font-size: 16px; /* Set the font size */
+    font-style: italic; /* Set the font style to italic */
+    position: absolute;
+    top: 450px; /* Adjust top position */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%);
+}
+
+.dotted-box2{
+    width: 400px; /* Set the width of the textbox */
+    height: 30px; /* Adjust the height as needed */
+    padding: 10px; /* Add padding for better visual appearance */
+    background-color: transparent;
+    border: 1px dotted rgba(153, 153, 153, 0.5);
+    outline: none; /* Remove the default focus outline */
+    font-size: 16px; /* Set the font size */
+    font-style: italic; /* Set the font style to italic */
+    position: absolute;
+    top: 530px; /* Adjust top position */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%);
+}
+
+.oblong-button3 {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 50px;
+    border: 1px solid #fff; /* Set the border color to white */
+    border-radius: 30px;
+    background: linear-gradient(to right, #573C9C, #427A92);
+    font-size: 18px;
+    color: white; /* Set the text color */
+    cursor: pointer;
+    transition: color 0.3s ease; /* Smooth transition on hover */
+
+    /* Optional: Add box-shadow for a more pronounced effect */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.oblong-button4 {
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 50px;
+    border: 1px solid #fff; /* Set the border color to white */
+    border-radius: 30px;
+    background: linear-gradient(to right, #573C9C, #427A92);
+    font-size: 18px;
+    color: white; /* Set the text color */
+    cursor: pointer;
+    transition: color 0.3s ease; /* Smooth transition on hover */
+
+    /* Optional: Add box-shadow for a more pronounced effect */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
