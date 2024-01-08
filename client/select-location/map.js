@@ -178,10 +178,20 @@ export function submitButton() {
 
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById('submit').addEventListener('click', function() {
-        const selectedLocation = getSelectedLocation();
+        const selectedLocation = getSelectedLocation()
+        overlay.style.display = 'block'
 
-        // Emit the selected location to the server
-        socket.emit('submit-location', { location: selectedLocation });
+        const confirmOverlayBtn = document.getElementById('confirmOverlayBtn')
+        if (selectedLocation.length <= 1) {
+            confirmOverlayBtn.innerHTML = 'Okay'
+            document.getElementById('nominated-trip').innerHTML = "Please select a location."
+        }
+        else {
+            confirmOverlayBtn.innerHTML = 'Confirm'
+            document.getElementById('nominated-trip').innerHTML = selectedLocation
+            // Emit the selected location to the server
+            socket.emit('submit-location', { location: selectedLocation })
+        }
     });
 });
 
@@ -204,8 +214,3 @@ function getSelectedLocation() {
 window.onload = function() {
     initMap();
 };
-
-// if (window.google && google.maps) {
-//     initMap();
-// }
-// initMap();

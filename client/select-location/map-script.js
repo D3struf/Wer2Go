@@ -1,4 +1,4 @@
-import { socket } from '../script.js';
+import { socket, loadPage } from '../script.js';
 import { submitButton } from '../select-location/map.js'
 
 var candidate_num;
@@ -94,12 +94,14 @@ var resultObject = {
 
 
 // In your select-location.html
-socket.on('update-locations', (locations) => {
-    // Update the UI to display the submitted locations
-    // displaySubmittedLocations(locations);
+
+
+// socket.on('update-locations', (locations) => {
+//     // Update the UI to display the submitted locations
+//     // displaySubmittedLocations(locations);
     
-    document.getElementById('demo').innerHTML = locations;
-});
+//     document.getElementById('demo').innerHTML = locations;
+// });
 
 // const submitButton = document.getElementById('submit');
 // submitButton.addEventListener('click', () => {
@@ -110,12 +112,20 @@ socket.on('update-locations', (locations) => {
 //     socket.emit('submit-location', { location: selectedLocation });
 // });
 
-function getSelectedLocation() {
-    // Submit Button on the map
-    const {coords, address, name } = submittedLocation;
+document.addEventListener('DOMContentLoaded', function () {
+    const overlay = document.getElementById('overlay')
+    const confirmOverlayBtn = document.getElementById('confirmOverlayBtn')
 
-    resultObject.coords = coords;
-    resultObject.address = address;
-    resultObject.name = name;
-    return resultObject.address;
-}
+    // Close overlay
+    confirmOverlayBtn.addEventListener('click', function () {
+        overlay.style.display = 'none'
+        if (confirmOverlayBtn.textContent === 'Confirm') loadPage('../voting.html')
+    });
+
+    // Close overlay when clicking outside the content
+    window.addEventListener('click', function (event) {
+        if (event.target === overlay) {
+            overlay.style.display = 'none'
+        }
+    });
+});
