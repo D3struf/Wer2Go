@@ -1,5 +1,5 @@
 # Web-Socket
-Voting System using Kemeny-Young Algorithm for Decision Theory Project using HTML, CSS, JavaScript, and Node.js (Snowpack and Nodemon).
+Voting System using Kemeny-Young Algorithm for Decision Theory Project using HTML, CSS, JavaScript, and Node.js ([Snowpack](https://www.snowpack.dev/tutorials/getting-started) and [Nodemon](https://www.npmjs.com/package/nodemon?activeTab=readme)).
 
 ## Instruction
 Note: You need to have [NVM](https://github.com/coreybutler/nvm-windows) installed before performing the following steps. You can follow this installation instruction for windows made by [FREECODECAMP](https://www.freecodecamp.org/news/nvm-for-windows-how-to-download-and-install-node-version-manager-in-windows-10/).
