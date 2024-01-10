@@ -11,13 +11,13 @@ export const roomInput = document.getElementById("room-input");
 export const roomCode = generateRandomString();
 
 export const socket = io("http://localhost:3000")
-socket.on ("connect", () => {
-    displayMessage(`You are connected with id: ${socket.id} `)
-})
+// socket.on ("connect", () => {
+//     displayMessage(`You are connected with id: ${socket.id} `)
+// })
 
-socket.on ("receive-message", message => {
-    displayMessage(message, "left")
-})
+// socket.on ("receive-message", message => {
+//     displayMessage(message, "left")
+// })
 
 // form.addEventListener("submit", e => {
 //     e.preventDefault()
@@ -69,18 +69,18 @@ hostRoomButton.addEventListener("click", () => {
     })
 })
 
-export function displayMessage(message, leftOrRight) {
-    const div = document.createElement("div")
-    div.textContent = message
+// export function displayMessage(message, leftOrRight) {
+//     const div = document.createElement("div")
+//     div.textContent = message
 
-    if (leftOrRight === "left") {
-        div.style.textAlign = "left"
-    } else {
-        div.style.textAlign = "right"
-    }
+//     if (leftOrRight === "left") {
+//         div.style.textAlign = "left"
+//     } else {
+//         div.style.textAlign = "right"
+//     }
 
-    document.getElementById("message-container").append(div)
-}
+//     document.getElementById("message-container").append(div)
+// }
 
 export function loadPage(page) {
     // Fetch the new page content

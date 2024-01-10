@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wer2Go</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
     <main>
@@ -12,9 +12,21 @@
             <header class="transparent-header">
                 <nav>
                     <ul>
-                        <li><a href="home.html" class="nav-link"><p class="indented-text pixelated-text">HOME</p></a></li>
-                        <li><a href="about.html" class="nav-link about-text"><p class="pixelated-text">ABOUT US</p></a></li>
-                        <li><a href="how to play.html" class="nav-link how-to-play-text"><p class="pixelated-text">HOW TO PLAY</p></a></li>
+                        <li>
+                            <a href="home.html" class="nav-link" onclick="animateLogo()">
+                                <p class="indented-text pixelated-text">HOME</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="about.html" class="nav-link about-text" onclick="animateLogo()">
+                                <p class="pixelated-text">ABOUT US</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="how to play.html" class="nav-link how-to-play-text" onclick="animateLogo()">
+                                <p class="pixelated-text">HOW TO PLAY</p>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
             </header>
@@ -25,9 +37,21 @@
         <img src="./images/dtbg.png" alt="main background" width="1920" height="1080">
 
         <div class="container">
-            <img src="./images/dtlogo.png" alt="logo">
+            <img src="./images/dtlogo.png" id="header-animate" alt="logo">
         </div>
     </main>
+
+    <script>
+        function animateLogo() {
+            const headerAnimate = document.getElementById('header-animate');
+            headerAnimate.classList.add('active');
+
+            // Wait for the animation to complete, then remove the 'active' class
+            setTimeout(() => {
+                headerAnimate.classList.remove('active');
+            }, 100000); // Adjust the time based on your transition duration
+        }
+    </script>
 </body>
 </html>
 

@@ -28,7 +28,17 @@ main {
     transform: translate(-50%, -50%);
     height: 100vh;
     width: 100%;
+    transition: color 0.1s ease;
 }
+
+#header-animate.active {
+    height: 8vh;
+    width: 8%;
+    top: 3%;
+    left: 3%;
+    transform: translate(-3%, -3%);
+}
+
 .header-container {
     position: relative;
     overflow: hidden; /* Ensures the header doesn't overlap content when fixed */
