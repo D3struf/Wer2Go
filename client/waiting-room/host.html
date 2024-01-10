@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wer2Go</title>
+    <script src="../waiting-room/waiting-room-script.js" type="module"></script>
+    <link rel="stylesheet" href="../styles.css">
+
+</head>
+<body>
+    <main>
+        <div class="header-container">
+            <header class="transparent-header">
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="../index.html" class="nav-link">
+                                <div class="logo">
+                                    <img src="../images/dtlogo.png" alt="Your Logo" width="505" height="304">
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../home.html" class="nav-link">
+                                <p class="indented-text pixelated-text">HOME</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../about.html" class="nav-link">
+                                <p class="pixelated-text">ABOUT US</p>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+
+        <div class="gradient-box"></div> <!-- gradient box after the header -->
+
+        <img src="../images/hostbg.png" alt="main background" width="1920" height="1080">
+
+
+        <div class="container-host">
+            <div class="textbox-container">
+                <p class="fixed-text"> http://localhost:8080</p>
+            </div>
+            <h2 class="hostext">WEBSITE</h2>
+            <div class="text-container">
+                <h2 id="game-code"></h2>
+            </div>
+            <h2 class="hostext1">GAME CODE</h2>
+            <div class="oblong-button3" id ="start-game">PLAY</div>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Check if gameCode is stored in local storage
+            const gameCode = localStorage.getItem('gameCode')
+            console.log(gameCode)
+        
+            if (gameCode) {
+                // Update the h2 element with the stored game code
+                const h2 = document.getElementById("game-code")
+                h2.innerHTML = gameCode
+            }
+        })
+    </script>
+</body>
+</html>

@@ -5,68 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wer2Go</title>
     <link rel="stylesheet" href="styles.css">
-
-    <style>
-        #homeline{
-        border-bottom: 3px solid;
-        border-color: #9200D8;
-        border-color: -moz-linear-gradient(left, #9200D8 0%, #1F67EA 100%);
-        border-color: -webkit-linear-gradient(left, #9200D8 0%, #1F67EA 100%);
-        border-color: linear-gradient(to right, #9200D8 0%, #1F67EA 100%);
-        }
-
-        #room-input {
-            position: absolute; 
-            top:50%; 
-            right:50%; 
-            z-index: 6;
-        }
-    </style>
-    
-    <script src="script.js" type="module"></script>
 </head>
 <body>
     <main>
-        <header>
-            <nav>
-                <div class="logo-container">
-                    <img src="./images/dtlogo.png" alt="Logo">
-                </div>
-                <ul>
-                    <li id="homeline"><a href="./home.html">Home</a></li>
-                    <li><a href="./about.html">About</a></li>
-                    <li><a href="./signin.html">Sign In</a></li>
-                    
-                    <!-- Create a list item for the dropdown -->
-
-                    <!-- <li class="dropdown">
-                        <a href="#" class="dropbtn"><img src="./images/girl.png" alt="profile"></a>
-                        
-                        Create the dropdown content
-                        <div class="dropdown-content">
-                            <div class="user-info">
-                                <img src="./images/girl.png" alt="Profile Image">
-                                <h2>Username</h2>
-                            </div>
-                            <hr>
-                            <a href="#" class="buttonUser">Account Settings</a>
-                            <br><br><br>
-                            <hr>
-                            <a href="#" class="buttonUser2">Log Out</a>
-                        </div>
-                    </li> -->
-
-                </ul>
-            </nav>
-        </header>
-
-        <div class="container-home">
-            <button id="host-button" type="button">HOST</button>
-            <button id="room-button" type="button">JOIN A CODE</button>
-            <input type="text" id="room-input">
+        <div class="header-container">
+            <header class="transparent-header">
+                <nav>
+                    <ul>
+                        <li><a href="home.html" class="nav-link"><p class="indented-text pixelated-text">HOME</p></a></li>
+                        <li><a href="about.html" class="nav-link about-text"><p class="pixelated-text">ABOUT US</p></a></li>
+                        <li><a href="how to play.html" class="nav-link how-to-play-text"><p class="pixelated-text">HOW TO PLAY</p></a></li>
+                    </ul>
+                </nav>
+            </header>
         </div>
+    
+        <div class="gradient-box"></div> <!-- gradient box after the header -->
 
-        <section id="message-container"></section>
+        <img src="./images/dtbg.png" alt="main background" width="1920" height="1080">
+
+        <div class="container">
+            <img src="./images/dtlogo.png" alt="logo">
+        </div>
     </main>
 </body>
 </html>
+
+

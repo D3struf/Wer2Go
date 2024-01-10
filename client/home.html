@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wer2Go</title>
+    <link rel="stylesheet" href="./styles.css">
+
+    <style>
+        #homeline{
+            border-bottom: 3px solid;
+            border-color: #9200D8;
+            border-color: -moz-linear-gradient(left, #9200D8 0%, #1F67EA 100%);
+            border-color: -webkit-linear-gradient(left, #9200D8 0%, #1F67EA 100%);
+            border-color: linear-gradient(to right, #9200D8 0%, #1F67EA 100%);
+        }
+    </style>
+
+    <script src="./script.js" type="module"></script>
+</head>
+<body>
+    <main>
+        <div class="header-container">
+            <header class="transparent-header">
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="../index.html" class="nav-link">
+                                <div class="logo">
+                                    <img src="../images/dtlogo.png" alt="Your Logo" width="505" height="304">
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="home.html" class="nav-link" style="color: #ff00f7; ">
+                                <p class="indented-text pixelated-text">HOME</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="about.html" class="nav-link about-text">
+                                <p class="pixelated-text">ABOUT US</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="how to play.html" class="nav-link how-to-play-text">
+                                <p class="pixelated-text">HOW TO PLAY</p>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+
+        <div class="gradient-box"></div>
+
+        <img class="container-home"  src="./images/homebg.png" alt="main background">
+
+        <div class="container-home">
+            <button id="host-button" class="oblong-button" type="button">HOST</button>
+            <a href="#popup" class="popup-btn">JOIN A CODE</a>
+            <div class="overlay" id="popup">
+                <div class="popup-content">
+                    <a href="#" class="close-btn">&times;</a>
+                    <h2>JOIN A CODE</h2>
+                    <div class="gcode">
+                        <input type="text" id="room-input" class="gcode-textbox" placeholder="GAME CODE">
+                    </div>
+                    <div class="start">
+                        <button id="room-button" type="button" class="oblong-button4">JOIN GAME</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

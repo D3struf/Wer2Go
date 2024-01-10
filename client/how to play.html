@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wer2Go</title>
+    <link rel="stylesheet" href="styles.css">
+    <title>Wer2Go</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff; 
+            position: relative; 
+        }
+        
+        body, html {
+        height: 100%;
+        overflow: hidden;
+    }
+        
+        .header-container {
+            position: relative;
+            overflow: hidden; /* Ensures the header doesn't overlap content when fixed */
+        }
+    
+        .transparent-header {
+            font-family: 'Courier New', monospace;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.3); /* Adjust the alpha value for transparency */
+            transition: background-color 0.3s ease-in-out;
+            z-index: 1000; /* Ensure the header stays on top of other elements */
+        }
+    
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            float: left;
+        }
+    
+        /* Color for the links */
+        .nav-link {
+            text-decoration: none;
+            color: #cdcdcd;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+            text-shadow: 0 0 10px rgb(207, 207, 207); /* Adjust the glow color and size */
+            margin-right: 20px; /* Adjust the value as needed */
+        }
+    
+        .nav-link:hover {
+            color: #ff00f7;
+        }
+    
+        /* Header: adjust text (home, about) */
+        .indented-text {
+            text-indent: 900px; /* header text from left and right */
+            margin-right: 80px; /* space between header text */
+        }
+    
+        .pixelated-text {
+            font-size: 18px; 
+            letter-spacing: 5px; 
+            text-align: center; /* Align text to the center */
+        }
+    
+        .logo img {
+            max-width: 100px; 
+            height: auto;
+        }
+    
+        .small-gradient-boxTOP {
+            padding: 10px;
+            border-radius: 100px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            text-shadow: 0 0 10px rgb(0, 0, 0); 
+            max-width: 260px;
+            background: linear-gradient(to right, #5C3AA1, #447C91);
+            position: relative;
+            z-index:7;
+            opacity:90%;
+            margin-top: -450px; /* top, right, botttom */
+            right:-815px;
+            height: 40px;
+            line-height: 40px;
+            font-family: 'Courier New', monospace;
+        } 
+    
+        /* header: adjust text (home, about)*/
+        .indented-text {
+            text-indent: 990px; /* header text from left and right */
+            margin-right: 90px; /* space between header text */
+        }
+    
+        .pixelated-text {
+            font-size: 18px; 
+            letter-spacing: 5px; 
+        }
+    
+    
+        .how-to-play-text {
+            margin-right: 40px; /* Adjust the spacing between "ABOUT" and "How to play" */
+        }
+    
+        .about-text {
+            margin-right: 170px; /* Increase the margin for "ABOUT" */
+        }
+    
+        .title {
+            position: absolute;
+            top: 700px;
+            left: 80px;
+            font-family: georgia;
+            color: #333333;
+        }
+    
+    
+        .htp img {
+            position: absolute;
+            top: 360px; 
+            right: 633px;
+            z-index: 7; 
+        }
+    </style>
+</head>
+<body>
+    <div class="header-container">
+        <header class="transparent-header">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="../index.html" class="nav-link">
+                            <div class="logo">
+                                <img src="../images/dtlogo.png" alt="Your Logo" width="505" height="304">
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="home.html" class="nav-link">
+                            <p class="indented-text pixelated-text">HOME</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="about.html" class="nav-link about-text">
+                            <p class="pixelated-text">ABOUT US</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="how to play.html" class="nav-link how-to-play-text" style="color: #ff00f7;">
+                            <p class="pixelated-text">HOW TO PLAY</p>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <div class="gradient-box"></div> <!-- gradient box after the header -->
+
+    <img src="./images/htpbg.png" alt="main background" width="1920" height="1080">
+
+    <div class="htp img">
+        <img src="./images/htp.png" alt="htp img" width="508" height="75">
+    </div>
+
+    <div class="title">
+        <center><blockquote><blockquote><font color="#24FF00" size=4 face="GEORGIA" style="margin-left:295px;">  <b>GATHER YOUR GROUP</b> </font></blockquote></blockquote></center>
+        <center><blockquote><blockquote><font color="#ffffff" size=3 face="ARIAL" style="margin-left:300px;">  <b>The game works best with 3-10 </b> </font></blockquote></blockquote></center>
+        <center><blockquote><blockquote><font color="#ffffff" size=3 face="ARIAL" style="margin-left:300px;"> <b>players. Each player needs their </b> </font></blockquote></blockquote></center>
+        <center><blockquote><blockquote><font color="#ffffff" size=3 face="ARIAL" style="margin-left:290px;">  <span><b> own computer.</b> </font></blockquote></blockquote></center></span>
+    </div>
+
+    <div class="title">
+        <center><blockquote><blockquote><font color="#24FF00" size=4 face="GEORGIA" style="margin-left:725px;">  <b>START THE GAME</b> </font></blockquote></blockquote></center>
+        <center><blockquote><blockquote><font color="#ffffff" size=3 face="ARIAL" style="margin-left:725px;">  <b>Invite your friends to join your</b> </font></blockquote></blockquote></center>
+        <center><blockquote><blockquote><font color="#ffffff" size=3 face="ARIAL" style="margin-left:725px;"> <b> game by sharing the game code.</b> </font></blockquote></blockquote></center>
+    </div>
+
+    <div class="title">
+        <center><blockquote><blockquote><font color="#24FF00" size=4 face="GEORGIA" style="margin-left:1116px;">  <b>LOCATE YOUR TRIP</b> </font></blockquote></blockquote></center>
+        <center><blockquote><blockquote><font color="#ffffff" size=3 face="ARIAL" style="margin-left:1115px;">  <b>Each player must select only one </b> </font></blockquote></blockquote></center>
+        <center><blockquote><blockquote><font color="#ffffff" size=3 face="ARIAL" style="margin-left:1115px;"> <b> desired location to pin and then vote</b> </font></blockquote></blockquote></center>
+        <center><blockquote><blockquote><font color="#ffffff" size=3 face="ARIAL" style="margin-left:1110px;"> <b> for their favorites. The final location will</b> </font></blockquote></blockquote></ce
+        <center><blockquote><blockquote><font color="#ffffff" size=3 face="ARIAL" style="margin-left:1110px;"> <b> be determined by the highest number of </b> </font></blockquote></blockquote></center>
+        <center><blockquote><blockquote><font color="#ffffff" size=3 face="ARIAL" style="margin-left:1125px;"> <b> votes.</b> </font></blockquote></blockquote></center>
+    </div>
+
+
+
+
+   
+</html>

@@ -1,10 +1,16 @@
-/* @font-face {
+@font-face {
     font-family: 'Pixellet Th';
     src: url(./Fonts/Pixelette\ Regular.ttf);
-} */
+}
 
 body {
+    font-family: 'Pixellet Th';
     margin: 0;
+}
+
+main {
+    height: 100vh; /* Set main element height to 100% of the viewport height */
+    overflow: hidden; /* Hide overflow content */
 }
 
 .container{
@@ -23,126 +29,69 @@ body {
     height: 100vh;
     width: 100%;
 }
-
-header {
-    display: flex;
-    position: fixed;
-    flex-direction: column;
-    height: 80px;
-    width: 100%;
-    z-index: 2;
-    /* From https://css.glass */
-    background: rgba(255, 255, 255, 0.23);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    text-shadow: 0 0 10px rgba(255, 60, 12, 0.8); 
-    backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(3px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.logo-container {
-    position: absolute;
-    width: 50%;
-    height: 100%;
-}
-
-.logo-container img {
-    width: auto; /* Set the width of your logo */
-    height: 100%; /* Maintain aspect ratio */
-}
-
-header nav {
-    margin-right: 60px;
-}
-
-header ul {
-    display: flex;
-    flex-direction: row;
-    gap: 60px;
-    align-items: center;
-    float: right;
-}
-
-header li {
-    list-style: none;
-    text-align: center;
-    text-wrap: nowrap;
-    color: #ffffff;
-    width: 40px;
-}
-
-header li:hover {
-    border-bottom: 3px solid;
-    border-color: #9200D8;
-    border-color: -moz-linear-gradient(left, #9200D8 0%, #1F67EA 100%);
-    border-color: -webkit-linear-gradient(left, #9200D8 0%, #1F67EA 100%);
-    border-color: linear-gradient(to right, #9200D8 0%, #1F67EA 100%);
-}
-
-header li:nth-child(4) {
-    padding-bottom: 10px;
-}
-
-header li img {
-    width: 48px;
-    height: 48px;
-}
-
-header li a {
-    color: #ffffff; 
-    text-decoration: none;
-}
-
-.white {
-    color: #ffffff;
-    font-size: 27rem;
-    position: absolute;
-    top: 7%;
-    left: 95%;
-    margin: 0;
-    padding: 0;
-}
-
-.go {   
-    position: absolute;
-    top: 65%;
-    left: 135%;
-    margin: 0;
-    padding: 0;
-}
-
-/* Styling the dropdown */
-.dropdown {
+.header-container {
     position: relative;
+    overflow: hidden; /* Ensures the header doesn't overlap content when fixed */
 }
 
-.dropbtn {
-    display: block;
+.transparent-header {
+    font-family: 'Courier New', monospace;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.3); /* Adjust the alpha value for transparency */
+    transition: background-color 0.3s ease-in-out;
+    z-index: 1000; /* Ensure the header stays on top of other elements */
 }
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background: linear-gradient(to right, #160118, #9601A3); /* Gradient background color */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    width: 250px; /* Adjust the width of the dropdown */
-    height: 350px; /* Adjust the height for a taller box */
-    padding: 10px; /* Adjust the padding inside the dropdown */
-    border-radius: 10px; /* Add border radius for rounded corners */
-    left: 50%; /* Center the dropdown horizontally */
-    transform: translateX(-80%); /* Adjust for centered positioning */
-    top: 90px; /* Adjust the top margin to move it down */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    float: left;
 }
 
-.dropdown-content img {
-    width: 130px; /* Adjust the width of the profile image */
-    height: 130px; /* Adjust the height of the profile image */
-    border-radius: 50%;
+/*color for the links */
+.nav-link {
+    text-decoration: none;
+    color: #cdcdcd;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+    text-shadow: 0 0 10px rgb(207, 207, 207); /* Adjust the glow color and size */
+    margin-right: 20px; /* Adjust the value as needed */
 }
 
-.dropdown:hover .dropdown-content {
-    display: block;
+.nav-link:hover {
+    color: #ff00f7; 
+}
+
+ /* header: adjust text (home, about)*/
+ .indented-text {
+    text-indent: 990px; /* header text from left and right */
+    margin-right: 90px; /* space between header text */
+}
+
+.pixelated-text {
+    font-size: 18px; 
+    letter-spacing: 5px; 
+}
+
+.logo img {
+    max-width: 120px; 
+    height: auto;
+}
+
+.how-to-play-text {
+    margin-right: 40px; /* Adjust the spacing between "ABOUT" and "How to play" */
+}
+
+.about-text {
+    margin-right: 170px; /* Increase the margin for "ABOUT" */
 }
 
 .buttonUser {
@@ -183,10 +132,7 @@ header li a {
     white-space: nowrap; 
 }
 
-
-
-.container-home{
-    background-image: url("./images/homebg.png");
+/* .container-home{
     min-height: 100vh;
     background-attachment: center;
     background-repeat: no-repeat;
@@ -200,9 +146,9 @@ header li a {
     transform: translate(-50%, -50%);
     height: 100vh;
     width: 100%;
-}
+} */
 
-#host-button {
+.oblong-button {
     position: absolute;
     top: 80%;
     left: 40%;
@@ -210,8 +156,10 @@ header li a {
     padding: 20px 40px;
     border: 1px solid #fff; /* Set the border color to white */
     border-radius: 30px;
+    text-decoration: none; /* Remove underline */
     background: transparent;
     font-size: 26px;
+    font-family: 'Pixellet Th';
     color: purple; /* Set the text color */
     cursor: pointer;
     transition: color 0.3s ease; /* Smooth transition on hover */
@@ -220,12 +168,12 @@ header li a {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-#host-button:hover {
+.oblong-button:hover {
     color: #fff; /* Change text color on hover */
     background: linear-gradient(45deg, #122C60, #633A75); /* Add gradient background on hover */
 }
 
-#room-button {
+.oblong-button2 {
     position: absolute;
     top: 80%;
     left: 55%;
@@ -233,6 +181,7 @@ header li a {
     padding: 20px 40px;
     border: 1px solid #fff; /* Set the border color to white */
     border-radius: 30px;
+    text-decoration: none; /* Remove underline */
     background: transparent;
     font-size: 26px;
     color: purple; /* Set the text color */
@@ -243,12 +192,12 @@ header li a {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-#room-button:hover {
+.oblong-button2:hover {
     color: #fff; /* Change text color on hover */
     background: linear-gradient(45deg, #122C60, #633A75); /* Add gradient background on hover */
 }
 
-.container-about{
+/* .container-about{
     background-image: url("./images/aboutbg.png");
     min-height: 100vh;
     background-attachment: center;
@@ -265,137 +214,248 @@ header li a {
     width: 100%;
 }
 
-.container-deletion{
-    background-image: url("./images/deletionbg.png");
+.container-host{
+    background-image: url("./images/hostbg.png");
     min-height: 100vh;
     background-attachment: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.container-deletion img{
+.container-host img{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     height: 100vh;
     width: 100%;
-}
+} */
 
-.container-signin{
-    background-image: url("./images/signinbg.png");
-    min-height: 100vh;
-    background-attachment: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.container-signin img{
+.oblong-button3 {
     position: absolute;
-    top: 50%;
+    top: 90%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 100vh;
-    width: 100%;
+    padding: 15px 70px;
+    border: 1px solid #fff; /* Set the border color to white */
+    border-radius: 30px;
+    text-decoration: none; /* Remove underline */
+    background: transparent;
+    font-size: 20px;
+    color: white; /* Set the text color */
+    cursor: pointer;
+    transition: color 0.3s ease; /* Smooth transition on hover */
+    font-weight: bold;
+
+    /* Optional: Add box-shadow for a more pronounced effect */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-#userpic {
-    width: 150px; /* Set the desired width */
-    height: auto; /* Maintain the aspect ratio */
-    max-width: 100%; /* Ensure the image does not exceed the container width */
-    max-height: 100%; /* Ensure the image does not exceed the container height */
-    display: block; /* Remove extra space below the image */
-    margin: 0 auto; /* Center the image horizontally in its container */
-    position: absolute; /* Change to absolute positioning */
-    top: 22%; /* Adjust the top property as needed */
-    left: 50%;
-    transform: translateX(-50%);
+.oblong-button3:hover {
+    color: #fff; /* Change text color on hover */
+    background: linear-gradient(to right, #26277B, #833796); /* Add gradient background on hover */
 }
 
-.container-signin p {
+/* Style for the container div */
+.textbox-container {
+    width: 400px; /* Set the width of the container */
+    height: 70px;
+    margin: 10px; /* Add some margin for spacing */
+    padding: 2px; /* Add padding to the container */
+    border: 2px dotted white; /* Set the border to dotted with a color */
+    box-sizing: border-box; /* Include padding and border in the box model */
+    /* Positioning properties */
+    position: absolute;
+    top: 52%; /* Adjust the top position */
+    left: 39%; /* Adjust the left position */
+}
+
+  /* Style for the fixed text inside the container */
+.fixed-text {
+    font-size: 1.65em; /* Set the font size */
+    color: white; /* Set the text color */
+    text-align: center; /* Center the text horizontally */
+    line-height: 1.5; /* Set the line height for better readability */
+    font-weight: bold; /* Make the text bold for increased visibility */
+    margin: auto;
+    padding: 0.5em 0 0 0.2em;
+}
+
+.hostext {
     font-weight: bold;
     color: #24FF00;
     position: absolute;
-    bottom: 520px; /* Adjust the bottom position */
+    bottom: 30%; /* Adjust the bottom position */
     left: 50%;
     transform: translateX(-50%);
     font-size: 38px;
     line-height: 1.5;
 }
 
-.container-signin h2 {
-    font-weight: bold;
-    color: white;
+.text-container {
+    width: 400px; /* Set the width of the container */
+    height: 70px;
+    margin: 10px; /* Add some margin for spacing */
+    padding: 2px; /* Add padding to the container */
+    border: 2px dotted white; /* Set the border to dotted with a color */
+    box-sizing: border-box; /* Include padding and border in the box model */
     position: absolute;
-    bottom: 180px; /* Adjust the bottom position */
+    top: 67%; /* Adjust the top position */
+    left: 39%; /* Adjust the left position */
+}
+
+  /* Style for the text inside the container */
+.container-text {
+    font-size: 26px; /* Set the font size */
+    color: white; /* Set the text color */
+    text-align: center; /* Center the text horizontally */
+    line-height: 1.5; /* Set the line height for better readability */
+    font-weight: bold; /* Make the text bold for increased visibility */
+}
+
+.hostext1 {
+    font-weight: bold;
+    color: #24FF00;
+    position: absolute;
+    bottom: 15%; /* Adjust the bottom position */
     left: 50%;
     transform: translateX(-50%);
-    font-size: 32px;
+    font-size: 38px;
     line-height: 1.5;
 }
 
-.dotted-box{
-    width: 400px; /* Set the width of the textbox */
-    height: 30px; /* Adjust the height as needed */
-    padding: 10px; /* Add padding for better visual appearance */
-    background-color: transparent;
-    border: 1px dotted rgba(153, 153, 153, 0.5);
-    outline: none; /* Remove the default focus outline */
-    font-size: 16px; /* Set the font size */
-    font-style: italic; /* Set the font style to italic */
+/* Style for the button */
+.popup-btn {
     position: absolute;
-    top: 450px; /* Adjust top position */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%);
-}
-
-.dotted-box2{
-    width: 400px; /* Set the width of the textbox */
-    height: 30px; /* Adjust the height as needed */
-    padding: 10px; /* Add padding for better visual appearance */
-    background-color: transparent;
-    border: 1px dotted rgba(153, 153, 153, 0.5);
-    outline: none; /* Remove the default focus outline */
-    font-size: 16px; /* Set the font size */
-    font-style: italic; /* Set the font style to italic */
-    position: absolute;
-    top: 530px; /* Adjust top position */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%);
-}
-
-.oblong-button3 {
-    position: absolute;
-    top: 65%;
-    left: 50%;
+    top: 80%;
+    left: 55%;
     transform: translate(-50%, -50%);
-    padding: 10px 50px;
+    padding: 20px 40px;
     border: 1px solid #fff; /* Set the border color to white */
     border-radius: 30px;
-    background: linear-gradient(to right, #573C9C, #427A92);
-    font-size: 18px;
-    color: white; /* Set the text color */
+    text-decoration: none; /* Remove underline */
+    background: transparent;
+    font-size: 26px;
+    color: purple; /* Set the text color */
     cursor: pointer;
     transition: color 0.3s ease; /* Smooth transition on hover */
-
-    /* Optional: Add box-shadow for a more pronounced effect */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+.popup-btn:hover{
+    color: #fff; /* Change text color on hover */
+    background: linear-gradient(45deg, #122C60, #633A75); /* Add gradient background on hover */
+}
+
+    /* Style for the overlay */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+/* Style for the pop-up content */
+.popup-content {
+    width: 650px; /* Set the width of the container */
+    height: 500px;
+    margin: 10px; /* Add some margin for spacing */
+    padding: 12px; /* Add padding to the container */
+    background: linear-gradient(to top, #510258, #0D020D); 
+    background-color: rgba(255, 255, 255, 0.1); /* Adjust opacity here */
+    border-radius: 25px;
+    text-align: center;
+    position: relative;
+}
+
+.popup-content h2 {
+    font-weight: bold;
+    color: #24FF00;
+    position: absolute;
+    bottom: 50%; /* Adjust the bottom position */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 60px;
+    white-space: nowrap;
+    line-height: 1.5;
+}
+
+/* Close button style */
+    .close-btn {
+    cursor: pointer;
+    color: #3498db;
+    font-size: 18px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    text-decoration: none;
+}
+
+/* Target the :target pseudo-class to show the pop-up */
+.overlay:target {
+    display: flex;
+}
+
+.gcode-textbox {
+    color: white;
+    width: 400px; /* Set the width of the container */
+    height: 50px;
+    margin: 10px; /* Add some margin for spacing */
+    padding: 2px 0 0 15px; /* Add padding to the container */
+    border: 2px dotted white; /* Set the border to dotted with a color */
+    box-sizing: border-box; /* Include padding and border in the box model */
+    background: transparent;
+    /* Positioning properties */
+    position: absolute;
+    top: 52%; /* Adjust the top position */
+    left: 18%; /* Adjust the left position */
+  }
 
 .oblong-button4 {
     position: absolute;
-    top: 85%;
+    top: 80%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 10px 50px;
+    padding: 10px 30px;
     border: 1px solid #fff; /* Set the border color to white */
     border-radius: 30px;
-    background: linear-gradient(to right, #573C9C, #427A92);
-    font-size: 18px;
-    color: white; /* Set the text color */
+    text-decoration: none; /* Remove underline */
+    background: transparent;
+    font-size: 20px;
+    color: white;
+     /* Set the text color */
     cursor: pointer;
-    transition: color 0.3s ease; /* Smooth transition on hover */
+    font-weight: bold;
+    transition: color 0.3s ease;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+}
 
-    /* Optional: Add box-shadow for a more pronounced effect */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.oblong-button4:hover {
+    color: white;
+    background:linear-gradient(to right, #26277B, #833796);
+}
+
+.wait{
+    font-weight: bold;
+    color: gray;
+    position: absolute;
+    bottom: 5%; /* Adjust the bottom position */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2em;
+    line-height: 1.5;
+}
+
+#game-code {
+    color: white;
+    text-align: center;
+    margin: auto;
+    font-size: 2.5em;
+    line-height: 1.5;
+    font-weight: bold;
 }

@@ -4,18 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wer2Go</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
 
     <style>
-        #aboutline{
-        border-bottom: 3px solid;
-        border-color: #9200D8;
-        border-color: -moz-linear-gradient(left, #9200D8 0%, #1F67EA 100%);
-        border-color: -webkit-linear-gradient(left, #9200D8 0%, #1F67EA 100%);
-        border-color: linear-gradient(to right, #9200D8 0%, #1F67EA 100%);
+        #header-animate {
+            transition: color 0.3s ease;
+        }
+        #header-animate:hover {
+            transform: translate(10%, 10%);
         }
     </style>
-    
 </head>
 <body>
     <main>
@@ -31,18 +29,13 @@
                             </a>
                         </li>
                         <li>
-                            <a href="home.html" class="nav-link">
+                            <a href="../home.html" class="nav-link">
                                 <p class="indented-text pixelated-text">HOME</p>
                             </a>
                         </li>
                         <li>
-                            <a href="about.html" class="nav-link about-text" style="color: #ff00f7; ">
+                            <a href="../about.html" class="nav-link">
                                 <p class="pixelated-text">ABOUT US</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="how to play.html" class="nav-link how-to-play-text">
-                                <p class="pixelated-text">HOW TO PLAY</p>
                             </a>
                         </li>
                     </ul>
@@ -52,9 +45,23 @@
 
         <div class="gradient-box"></div> <!-- gradient box after the header -->
 
-        <img src="./images/aboutbg.png" alt="main background" width="1920" height="1080">
+        <img src="../images/roombg.png" id="header-animate" alt="main background" width="1920" height="1080">
 
-        <div class="container-about"></div>
+
+        <div class="container-host">
+            <div class="textbox-container">
+                <p class="fixed-text">http://localhost:8080</p>
+            </div>
+            <h2 class="hostext">WEBSITE</h2>
+            <div class="text-container">
+                <h2 id="game-code"></h2>
+            </div>
+            <h2 class="hostext1">GAME CODE</h2>
+                <h2 class="wait">Waiting for the host to start the game...</h2>
+        </div>
     </main>
+
+    <script src="../waiting-room/waiting-room-script.js" type="module"></script>
+    
 </body>
 </html>

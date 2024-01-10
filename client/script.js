@@ -35,9 +35,9 @@ joinRoomButton.addEventListener("click", () => {
     const room = roomInput.value
     socket.emit("join-room", room, message => {
         // displayMessage(message)
-        isHosting = false;
+        isHosting = false
         if (message.includes('Joined')) {
-            loadPage('../waiting-room/waiting-room.html');
+            loadPage('./waiting-room/room.html')
         }
     })
 })
@@ -64,7 +64,7 @@ hostRoomButton.addEventListener("click", () => {
 
         // Redirect to waiting-room.html only after the room is successfully created
         if (message.includes('Joined')) {
-            loadPage('../waiting-room/waiting-room.html');
+            loadPage('./waiting-room/host.html');
         }
     })
 })

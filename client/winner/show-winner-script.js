@@ -30,7 +30,7 @@ socket.on('display-location-rankings', rankings => {
 })
 
 socket.emit('get-location-rankings', () => {
-    loadPage('./show-winner.html')
+    loadPage('../winner/show-winner.html')
 })
 
 function determineWinner() {
