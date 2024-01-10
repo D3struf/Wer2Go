@@ -59,7 +59,7 @@ h1 {
 }
 
 #leaderboard tr td {
-    background: linear-gradient(to right, #ED088B, #F042FF);
+    background: linear-gradient(to right, #000000, #D600E8);
     font-family: 'Anton', sans-serif;
     font-size: 0.75em;
     border-radius: 4px;

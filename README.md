@@ -2,6 +2,7 @@
 Voting System using Kemeny-Young Algorithm for Decision Theory Project using HTML, CSS, JavaScript, and Node.js (Snowpack and Nodemon).
 
 ## Instruction
+Note: You need to have [NVM](https://github.com/coreybutler/nvm-windows) installed before performing the following steps. You can follow this installation instruction for windows made by [FREECODECAMP](https://www.freecodecamp.org/news/nvm-for-windows-how-to-download-and-install-node-version-manager-in-windows-10/).
 
 In your created folder, clone the repository using git
 
