@@ -1,0 +1,90 @@
+@font-face {
+    font-family: 'Pixellet Th';
+    src: url(../Fonts/Pixelette\ Regular.ttf);
+    
+}
+
+body {
+    background-image: url('../images/voting-bg.png');
+    color: white;
+}
+
+h1 {
+    margin: 50px 0 0;
+    text-align: center;
+    font-family: 'Anton', sans-serif;
+    font-size: 3em;
+}
+
+#waiting {
+    width: 100%;
+    max-width: 700px;
+    height: 80%;
+    margin: 60px auto 0;
+}
+
+#waiting-text {
+    color: #AC50D0;
+    font-family: 'Pixellet Th';
+    font-size: 2em;
+    font-weight: 400;
+    text-wrap: nowrap;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#sortable {
+    width: 100%;
+}
+
+#sortable li {
+    height: 100px;
+    font-family: 'Anton', sans-serif;
+    font-size: 1.25em;
+    font-weight: 400;
+    text-wrap: wrap;
+    background: linear-gradient(to right, #000000, #D600E8);
+    opacity: 90%;
+    border-radius: 24px;
+    text-align: center;
+}
+
+#sortable div {
+    height: 90px;
+    text-align: center;
+    background: linear-gradient(to right, #000000, #D600E8) padding-box,
+                linear-gradient(to right, #ED088B, #F042FF) border-box;
+    border-radius: 50em;
+    border: 2px solid transparent;
+    border-radius: 18px;
+    padding: 5px;
+}
+
+#sortable a {
+    color: #4967ec;
+    text-shadow: #000;
+}
+
+#submit-ranking {
+    height: 40px;
+    width: 30%;
+    margin-top: 25px;
+    font-weight: 700;
+    font-size: 28px;
+    font-family: 'Pixellet Th';
+    color: white;
+    border-radius: 25px;
+    border: 0 solid;
+    text-shadow: #000;
+    line-height: 1.5;
+    padding: 0;
+    background: linear-gradient(to right, #010300, #23F800);
+    cursor: pointer;
+    position: fixed;
+    z-index: 1;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+}

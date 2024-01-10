@@ -111,6 +111,9 @@ document.addEventListener('DOMContentLoaded', function () {
     // Close overlay
     confirmOverlayBtn.addEventListener('click', () => {
         overlay.style.display = 'none'
+        // Emit the 'get-locations' event to request the updated locations
+        socket.emit('get-locations')
+
         // Listen for the 'set-locations' event
         socket.on('set-locations', data => {
             updatedLocations = data;
@@ -121,12 +124,9 @@ document.addEventListener('DOMContentLoaded', function () {
             
             // Now you can redirect or perform other actions
             if (confirmOverlayBtn.textContent === 'Confirm') {
-                loadPage('../voting/voting.html');
+                loadPage('../voting/voting.html')
             }
         });
-
-            // Emit the 'get-locations' event to request the updated locations
-            socket.emit('get-locations');
         })
 
     // Close overlay when clicking outside the content

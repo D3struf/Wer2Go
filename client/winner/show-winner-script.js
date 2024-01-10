@@ -111,26 +111,15 @@ function createTable(rankingContainer) {
 
     // Append the table to the parent container
     rankingContainer.appendChild(leaderboardTable)
-}
 
-function createOverlay(rankingContainer) {
-    const overlay = document.getElementById("overlay")
+    const leaveBtn = document.createElement('button')
+    leaveBtn.textContent = 'Leave Room'
+    leaveBtn.id = 'leave-room'
+    document.body.appendChild(leaveBtn)
 
-    const overlayContent = document.createElement("div")
-    overlayContent.id = 'overlay-content'
-
-    const h1 = document.createElement("h1")
-    h1.id = 'winner'
-
-    const h2 = document.createElement("h2")
-    h2.id = 'trip'
-
-    overlayContent.appendChild(h1)
-    overlayContent.appendChild(h2)
-
-    overlay.appendChild(overlayContent)
-
-    rankingContainer.appendChild(overlay)
+    leaveBtn.addEventListener('click', function() {
+        window.location.href = '../home.html';
+    })
 }
 
 function triggerConfetti() {

@@ -78,8 +78,6 @@ io.on("connection", socket => {
     });
 
     socket.on('submit-location', ({ location, coords }) => {
-        // submitCount++
-
         // if (submitCount === submittedLocations.length) {
             // Store the submitted location along with the socket ID and
             // Handle players submitted Locations
@@ -93,8 +91,7 @@ io.on("connection", socket => {
                 submittedLocations.push({ socketId: socket.id, location, coords })
             }
             console.log(submittedLocations)
-            // Reset the counter
-            submitCount = 0
+            
 
             // Broadcast the updated list of submitted locations to all clients
             io.emit('update-locations', submittedLocations)
@@ -115,6 +112,19 @@ io.on("connection", socket => {
             playerLocationRankings.push({ socketId: socket.id, ranking: ranks })
         }
         console.log(playerLocationRankings)
+    })
+
+    socket.on('check-num-players', () => {
+        submitCount++ 
+        const totalPlayers = activeRooms.reduce((sum, room) => sum + room.players.length, 0);
+
+        console.log(totalPlayers)
+        if (submitCount === totalPlayers) {
+            submitCount = 0
+            console.log('Submite Count')
+            console.log(submitCount)
+            io.emit('return-num-players', submittedLocations)
+        }
     })
 
     socket.on('get-location-rankings', () => {

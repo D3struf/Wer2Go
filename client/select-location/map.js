@@ -182,7 +182,7 @@ document.addEventListener("DOMContentLoaded", function () {
         overlay.style.display = 'block'
 
         const confirmOverlayBtn = document.getElementById('confirmOverlayBtn')
-        if (selectedLocation.length <= 1) {
+        if (selectedLocation.address.length <= 1) {
             confirmOverlayBtn.innerHTML = 'Okay'
             document.getElementById('nominated-trip').innerHTML = "Please select a location."
         }

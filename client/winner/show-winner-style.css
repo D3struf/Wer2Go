@@ -1,0 +1,89 @@
+@font-face {
+    font-family: 'Pixellet Th';
+    src: url(../Fonts/Pixelette\ Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Arcade';
+    src: url(../Fonts/ARCADE.ttf) format('truetype');
+}
+
+body {
+    background-image: url('../images/leaderboard-bg.png');
+    color: white;
+}
+
+h1 {
+    margin: 50px 0 0;
+    text-align: center;
+    font-family: 'Anton', sans-serif;
+    font-size: 5em;
+    color: #24FF00;
+}
+
+#ranking {
+    color: #AC50D0;
+    font-family: 'Pixellet Th';
+    font-size: 2em;
+    font-weight: 400;
+    text-wrap: nowrap;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#leaderboard {
+    color: white;
+    font-family: 'Anton', sans-serif;
+    border-collapse: separate;
+    border-spacing: 10px;
+}
+
+#leaderboard th {
+    color: white;
+}
+
+#leaderboard tr {
+    font-family: 'Arcade', sans-serif;
+    font-size: 1em;
+}
+
+#leaderboard tr:first-child {
+    color: goldenrod;
+}
+
+#leaderboard tr td:last-child {
+    text-align: center;
+    font-size: 1em;
+}
+
+#leaderboard tr td {
+    background: linear-gradient(to right, #ED088B, #F042FF);
+    font-family: 'Anton', sans-serif;
+    font-size: 0.75em;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+#leave-room {
+    height: 35px;
+    width: 200px;
+    margin-top: 25px;
+    font-weight: 700;
+    font-size: 1em;
+    font-family: 'ARCADE';
+    color: white;
+    border-radius: 25px;
+    border: 0 solid;
+    text-shadow: #000;
+    line-height: 1;
+    padding: 10px;
+    background-color: #FF0000;
+    opacity: 56%;
+    cursor: pointer;
+    position: fixed;
+    z-index: 1;
+    top: 25px;
+    right: 25px;
+}

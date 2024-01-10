@@ -7,37 +7,18 @@
 
     <script type="module" src="../winner/show-winner-script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.0.3"></script>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 
-    <style>
-        /* When Winner Wins */
-        .overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-        }
-
-        #overlay-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        }
-    </style>
+    <link rel="stylesheet" href="../winner/show-winner-style.css">
 </head>
 <body>
-    <h1>SHOW WINNER</h1>
+    <h1>LEADERBOARD</h1>
 
     <div id="ranking">
         Waiting for others to submit their rankings...
     </div>
-    <div id="overlay" class="overlay"></div>
 </body>
 </html>
