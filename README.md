@@ -1,4 +1,5 @@
-# Web-Socket
+# Wer2Go: A Web-Based Smart Voting System for Destination Selections Integrated with Google Maps using Kemeny-Young Method in Rank Aggregation
+
 Voting System using Kemeny-Young Algorithm for Decision Theory Project using HTML, CSS, JavaScript, and Node.js ([Snowpack](https://www.snowpack.dev/tutorials/getting-started) and [Nodemon](https://www.npmjs.com/package/nodemon?activeTab=readme)).
 
 ## Instruction
