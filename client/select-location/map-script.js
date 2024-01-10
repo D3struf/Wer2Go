@@ -1,13 +1,5 @@
 import { socket, loadPage } from '../script.js';
-import { submitButton } from '../select-location/map.js'
-
-var candidate_num;
-var voters = [];
-var resultObject = {
-    coords: "",
-    address: "",
-    name: ""
-};
+export var updatedLocations;
 
 // Dynamically generate html for each voters
 // function createRankingElements(voterId) {
@@ -117,10 +109,25 @@ document.addEventListener('DOMContentLoaded', function () {
     const confirmOverlayBtn = document.getElementById('confirmOverlayBtn')
 
     // Close overlay
-    confirmOverlayBtn.addEventListener('click', function () {
+    confirmOverlayBtn.addEventListener('click', () => {
         overlay.style.display = 'none'
-        if (confirmOverlayBtn.textContent === 'Confirm') loadPage('../voting.html')
-    });
+        // Listen for the 'set-locations' event
+        socket.on('set-locations', data => {
+            updatedLocations = data;
+            console.log('Inside the socket locations:', updatedLocations);
+            
+            // Process the updatedLocations as needed
+            // processUpdatedLocations(updatedLocations);
+            
+            // Now you can redirect or perform other actions
+            if (confirmOverlayBtn.textContent === 'Confirm') {
+                loadPage('../voting/voting.html');
+            }
+        });
+
+            // Emit the 'get-locations' event to request the updated locations
+            socket.emit('get-locations');
+        })
 
     // Close overlay when clicking outside the content
     window.addEventListener('click', function (event) {

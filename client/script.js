@@ -88,9 +88,10 @@ export function loadPage(page) {
         .then(response => response.text())
         .then(html => {
             // Replace the current document with the new page content
-            document.open();
-            localStorage.setItem('gameCode', getGameCode);
-            document.write(html);
-            document.close();
-        });
+            document.open()
+            localStorage.setItem('gameCode', getGameCode)
+            document.write(html)
+            document.close()
+        })
+        .catch(error => console.error('Error loading page:', error))
 }

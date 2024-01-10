@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Voting Now</title>
     
-    <script src="./voting-script.js"></script>
+    <script type="module" src="../voting/voting-script.js"></script>
 
     <style>
         .sortable-list {
@@ -19,6 +19,7 @@
         }
         
         li {
+            height: 200px;
             background-color: #f0f0f0;
             padding: 10px;
             margin: 5px;
@@ -29,15 +30,12 @@
 <body>
     <h1>Voting NOWWWW!!!</h1>
 
-    <div class="sortable-list">
-        <ul id="sortable">
-            <li draggable="true">Item 1</li>
-            <li draggable="true">Item 2</li>
-            <li draggable="true">Item 3</li>
-            <!-- Add more list items as needed -->
-        </ul>
+    <div id="waiting" class="sortable-list">
+        Waiting for others to submit their locations...
+        <ul id="sortable"></ul>
     </div>
+    <button type="submit" id="submit-ranking">Submit Ranking</button>
 
-    <script src="./drag-script.js"></script>
+    <script type="module" src="../voting/drag-script.js"></script>
 </body>
 </html>

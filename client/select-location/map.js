@@ -188,9 +188,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         else {
             confirmOverlayBtn.innerHTML = 'Confirm'
-            document.getElementById('nominated-trip').innerHTML = selectedLocation
+            document.getElementById('nominated-trip').innerHTML = selectedLocation.address
             // Emit the selected location to the server
-            socket.emit('submit-location', { location: selectedLocation })
+            socket.emit('submit-location', { location: selectedLocation.address, coords: selectedLocation.coords })
+            
         }
     });
 });
@@ -208,7 +209,7 @@ function getSelectedLocation() {
     resultObject.address = address;
     resultObject.name = name;
     console.log(resultObject.address)
-    return resultObject.address;
+    return resultObject;
 }
 
 window.onload = function() {

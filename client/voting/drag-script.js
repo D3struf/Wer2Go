@@ -1,4 +1,4 @@
-const sortableList = document.getElementById("sortable");
+export const sortableList = document.getElementById("sortable");
 let draggedItem = null;
 
 // Start of Drag Feature

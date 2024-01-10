@@ -10,11 +10,13 @@ In your created folder, clone the repository using git
 In VSCode terminal, create a new terminal for:
 - in Client
     1. run `cd client`
-    2. run `npm run start`
+    2. run `npm run start` \
         The page will reload if you make edits.\
         You will also see any lint errors in the console.
 - in Server
     1. run `cd server`
-    2. run `npm run devStart`
+    2. run `npm run devStart` \
+        The server will reload if you make edits.\
+        You will also see any lint errors in the terminal.
 
 Open [http://localhost:8080](http://localhost:8080) to view it in the browser.
