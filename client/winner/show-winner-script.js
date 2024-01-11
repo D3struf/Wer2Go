@@ -1,6 +1,9 @@
 import { socket, loadPage } from "../script"
 let overallRankings = []
 
+const roomId = sessionStorage.getItem('roomId')
+socket.emit('get-location-rankings', roomId)
+
 socket.on('display-location-rankings', rankings => {
     const rankingContainer = document.getElementById('ranking')
     rankingContainer.textContent = ""
@@ -29,9 +32,9 @@ socket.on('display-location-rankings', rankings => {
     triggerConfetti()
 })
 
-socket.emit('get-location-rankings', () => {
-    loadPage('../winner/show-winner.html')
-})
+// socket.emit('get-location-rankings', () => {
+//     loadPage('../winner/show-winner.html')
+// })
 
 function determineWinner() {
     const count = overallRankings.length;

@@ -5,6 +5,7 @@ import {
     roomInput
 } from "../script.js";
 
+sessionStorage.setItem("roomId", roomInput.value)
 
 document.addEventListener('DOMContentLoaded', () => {
     const startGameContainer = document.getElementById('start-game-container');

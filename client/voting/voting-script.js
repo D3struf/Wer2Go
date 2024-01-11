@@ -2,10 +2,13 @@ import { socket, loadPage } from '../script.js'
 import { sortableList } from '../voting/drag-script.js'
 import { updatedLocations } from '../select-location/map-script.js'
 
-socket.on('return-num-players', submittedLocations => {
+const roomId = sessionStorage.getItem('roomId')
+socket.emit('check-num-players', roomId)
+
+socket.on('return-num-players', (submittedLocations) => {
     const waitingContainer = document.getElementById('waiting-text')
     waitingContainer.innerHTML = ""
-
+    
     submittedLocations.forEach((location, index) => {
         const list = document.createElement('li')
         list.draggable = true
@@ -47,11 +50,11 @@ socket.on('return-num-players', submittedLocations => {
     
         // Now, textContents is an array containing the text contents of all li elements
         console.log(textContents)
-        socket.emit('location-rankings', textContents)
+        socket.emit('location-rankings', textContents, roomId)
         loadPage('../winner/show-winner.html')
     })
 })
 
-socket.emit('check-num-players', () => {
-    loadPage('../voting/voting.html')
-})
+// socket.emit('check-num-players', (roomId) => {
+//     loadPage('../voting/voting.html')
+// })

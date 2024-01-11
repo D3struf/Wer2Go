@@ -88,7 +88,7 @@ export var updatedLocations;
 // In your select-location.html
 
 
-// socket.on('update-locations', (locations) => {
+// socket.on('up-loc', (locations) => {
 //     // Update the UI to display the submitted locations
 //     // displaySubmittedLocations(locations);
     

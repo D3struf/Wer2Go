@@ -8,11 +8,11 @@ const io = require('socket.io')(3000, {
     },
 })
 
-const activeRooms = []
-const submittedLocations = []
-const playerLocationRankings = []
-let playersCount = 0
-let submitCount = 0
+let activeRooms = []
+let submittedLocations = []
+let playerLocationRankings = []
+let playersCount = []
+let submitCount = []
 
 // Default namespace for localHost
 io.on("connection", socket => {
@@ -24,9 +24,9 @@ io.on("connection", socket => {
                 activeRooms[i].players.splice(index, 1)
                 if (activeRooms[i].players.length === 0) {
                     // Remove the entire room if no players are left
-                    activeRooms.splice(i, 1)
-                    submittedLocations.splice(0, submittedLocations.length)
-                    playerLocationRankings.splice(0, playerLocationRankings.length)
+                    activeRooms = []
+                    submittedLocations = []
+                    playerLocationRankings = []
                 }
                 break  // Stop searching after finding the room
             }
@@ -75,67 +75,87 @@ io.on("connection", socket => {
     socket.on("start-game", (room, cb) => {
         io.to(room).emit("game-started")
         cb(`Game started in room ${room}`)
-    });
+    })
 
-    socket.on('submit-location', ({ location, coords }) => {
-        // if (submitCount === submittedLocations.length) {
-            // Store the submitted location along with the socket ID and
-            // Handle players submitted Locations
-            const existingPlayerIndex = submittedLocations.findIndex(player => player.socketId === socket.id)
+    socket.on('submit-location', ({ location, coords, roomId }) => {
+        // Check if the room ID exists in the submittedLocationsByRoom object
+        if (!submittedLocations[roomId]) {
+            // If the room ID doesn't exist, create an array for it
+            submittedLocations[roomId] = []
+        }
 
-            if (existingPlayerIndex !== -1) {
-                submittedLocations[existingPlayerIndex].location = location
-                submittedLocations[existingPlayerIndex].coords = coords
-            }
-            else {
-                submittedLocations.push({ socketId: socket.id, location, coords })
-            }
-            console.log(submittedLocations)
-            
+        // Find the player's index in the room's submitted locations
+        const existingPlayerIndex = submittedLocations[roomId].findIndex(player => player.socketId === socket.id)
 
-            // Broadcast the updated list of submitted locations to all clients
-            io.emit('update-locations', submittedLocations)
-        // }
+        if (existingPlayerIndex !== -1) {
+            // Update the existing player's location and coordinates
+            submittedLocations[roomId][existingPlayerIndex].location = location
+            submittedLocations[roomId][existingPlayerIndex].coords = coords
+        } else {
+            // If the player doesn't exist in the room, add them
+            submittedLocations[roomId].push({ socketId: socket.id, location, coords })
+        }
+
+        console.log(submittedLocations)
+
+        // Broadcast the updated list of submitted locations to all clients in the same room
+        io.to(roomId).emit('update-locations', submittedLocations[roomId])
     })
 
     socket.on('get-locations', () => {
         socket.emit('set-locations', submittedLocations)
     })
 
-    socket.on('location-rankings', ranks => {
-        const existingPlayerIndex = playerLocationRankings.findIndex(player => player.socketId === socket.id)
+    socket.on('location-rankings', (ranks, roomId) => {
+        if (!playerLocationRankings[roomId]) {
+            // If the room ID doesn't exist, create an array for it
+            playerLocationRankings[roomId] = []
+        }
+
+        const existingPlayerIndex = playerLocationRankings[roomId].findIndex(player => player.socketId === socket.id)
 
         if (existingPlayerIndex !== -1) {
-            playerLocationRankings[existingPlayerIndex].ranks = ranks
+            playerLocationRankings[roomId][existingPlayerIndex].ranks = ranks
         }
         else {
-            playerLocationRankings.push({ socketId: socket.id, ranking: ranks })
+            playerLocationRankings[roomId].push({ socketId: socket.id, ranking: ranks })
         }
-        console.log(playerLocationRankings)
+        console.log(playerLocationRankings[roomId])
     })
 
-    socket.on('check-num-players', () => {
-        submitCount++ 
-        const totalPlayers = activeRooms.reduce((sum, room) => sum + room.players.length, 0);
+    socket.on('check-num-players', roomId => {
+        let totalPlayers = 0
+        if (!submitCount[roomId]) {
+            submitCount[roomId] = 0;
+        }
 
-        console.log(totalPlayers)
-        if (submitCount === totalPlayers) {
-            submitCount = 0
-            console.log('Submite Count')
-            console.log(submitCount)
-            io.emit('return-num-players', submittedLocations)
+        submitCount[roomId]++
+        const room = activeRooms.find((room) => room.id === roomId)
+        if (room) {totalPlayers = room.players.length}
+
+        console.log('SubmitCount Total', totalPlayers)
+        if (submitCount[roomId] === totalPlayers) {
+            submitCount[roomId] = 0
+            io.to(roomId).emit('return-num-players', submittedLocations[roomId])
         }
     })
 
-    socket.on('get-location-rankings', () => {
-        playersCount++
+    socket.on('get-location-rankings', roomId => {
+        let totalPlayers = 0
+        if (!playersCount[roomId]) {
+            playersCount[roomId] = 0;
+        }
+        playersCount[roomId]++
+        const room = activeRooms.find((room) => room.id === roomId)
+        if (room) {totalPlayers = room.players.length}
 
+        console.log('PlayerCount Total', totalPlayers)
         // Check if all players have submitted their rankings
-        if (playersCount === submittedLocations.length) {
+        if (playersCount[roomId] === totalPlayers) {
             // If all players have submitted, emit the rankings to all clients
-            io.emit('display-location-rankings', playerLocationRankings)
+            io.to(roomId).emit('display-location-rankings', playerLocationRankings[roomId])
             // Reset the counters for the next round
-            playersCount = 0
+            playersCount[roomId] = 0
         }
     })
 })
@@ -143,3 +163,4 @@ io.on("connection", socket => {
 instrument(io, {
     auth: false
 })
+

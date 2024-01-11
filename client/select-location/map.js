@@ -1,5 +1,5 @@
 // Initialize and add the map
-import { socket } from '../script.js';
+import { socket } from "../script.js"; 
 
 var map;
 var marker;
@@ -187,10 +187,11 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById('nominated-trip').innerHTML = "Please select a location."
         }
         else {
+            const roomId = sessionStorage.getItem('roomId')
             confirmOverlayBtn.innerHTML = 'Confirm'
             document.getElementById('nominated-trip').innerHTML = selectedLocation.address
             // Emit the selected location to the server
-            socket.emit('submit-location', { location: selectedLocation.address, coords: selectedLocation.coords })
+            socket.emit('submit-location', { location: selectedLocation.address, coords: selectedLocation.coords, roomId })
             
         }
     });
